@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f16">
+  <meta name="description" content="Vitalii | Senior Backend Developer">
+  <title>Vitalii | Senior Backend Developer</title>
+  <style>
+    :root {
+      --bg: #0b0f16;
+      --surface: #121a26;
+      --border: #263244;
+      --text: #edf3fa;
+      --muted: #96a6bb;
+      --accent: #54e0b1;
+      --accent2: #72a9ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1100px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 26px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -1px;
+    }
+
+    .logo span, .accent { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      min-height: 76vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      right: 0;
+      top: 15%;
+      background: rgba(84,224,177,.11);
+      filter: blur(100px);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-family: monospace;
+      letter-spacing: 2px;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 90px);
+      line-height: 1.05;
+      letter-spacing: -4px;
+      margin: 20px 0;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      padding: 13px 24px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #07120f;
+      border-color: var(--accent);
+    }
+
+    section { padding: 75px 0; }
+
+    .section-title {
+      font-size: 32px;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 14px;
+      transition: .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    .card h3 { margin-top: 0; }
+
+    .card p { color: var(--muted); }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      background: #1d2a39;
+      border: 1px solid #2d4054;
+      padding: 5px 11px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: monospace;
+      color: #b9d6ec;
+    }
+
+    .about {
+      max-width: 800px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .terminal {
+      margin-top: 30px;
+      background: #080d13;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .terminal-header {
+      padding: 12px 18px;
+      background: #182230;
+      color: var(--muted);
+      font: 12px monospace;
+    }
+
+    pre {
+      margin: 0;
+      padding: 24px;
+      overflow-x: auto;
+      color: #a8d9c7;
+      font: 14px/1.8 monospace;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    @media (max-width: 750px) {
+      .grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 12px; font-size: 12px; }
+      .hero { min-height: 65vh; }
+      h1 { letter-spacing: -2px; }
+      section { padding: 55px 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">vitalii<span>.dev</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#stack">Stack</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <div>
+          <div class="eyebrow">
+            &gt; HELLO WORLD, I'M VITALII
+          </div>
+          <h1>Building things<br>
+            <span class="accent">that scale.</span>
+          </h1>
+          <p>
+            Senior Backend Developer specializing in
+            Node.js, TypeScript, AWS and distributed systems.
+            I build reliable APIs, design cloud infrastructure
+            and solve complex engineering problems.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" id="githubHero"
+               href="https://github.com/" target="_blank"
+               rel="noopener noreferrer">View GitHub ↗</a>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
+        </div>
+      </header>
+
+      <section id="about">
+        <div class="eyebrow">01 / ABOUT ME</div>
+        <h2 class="section-title">More than just code.</h2>
+        <p class="about">
+          I'm a backend engineer with 8+ years of experience
+          building and maintaining production systems.
+          My work covers API architecture, microservices,
+          cloud infrastructure, database optimization
+          and engineering mentorship.
+        </p>
+
+        <div class="terminal">
+          <div class="terminal-header">
+            ● ● ● &nbsp; vitalii@backend ~ %
+          </div>
+          <pre>const developer = {
+  name: "Vitalii",
+  role: "Senior Backend Developer",
+  experience: "8+ years",
+  focus: [
+    "Backend Architecture",
+    "Cloud Infrastructure",
+    "Distributed Systems",
+    "Mentorship"
+  ],
+  coffee: true
+};</pre>
+        </div>
+      </section>
+
+      <section id="stack">
+        <div class="eyebrow">02 / TECH STACK</div>
+        <h2 class="section-title">Tools I work with.</h2>
+        <p class="section-subtitle">
+          Technologies I use to build production-ready systems.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Backend Engineering</h3>
+            <p>APIs, business logic and distributed services.</p>
+            <div class="tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Express</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Microservices</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Cloud & DevOps</h3>
+            <p>Infrastructure, deployment and automation.</p>
+            <div class="tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Lambda</span>
+              <span class="tag">Docker</span>
+              <span class="tag">ECS / EKS</span>
+              <span class="tag">GitHub Actions</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Data & Messaging</h3>
+            <p>Storage, caching and asynchronous processing.</p>
+            <div class="tags">
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">DynamoDB</span>
+              <span class="tag">Redis</span>
+              <span class="tag">SQS</span>
+              <span class="tag">Elasticsearch</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="eyebrow">03 / SELECTED WORK</div>
+        <h2 class="section-title">Featured projects.</h2>
+        <p class="section-subtitle">
+          Replace these examples with your actual repositories.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>API Architecture</h3>
+            <p>
+              Scalable REST API architecture with authentication,
+              validation and structured error handling.
+            </p>
+            <div class="tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">TypeScript</span>
+            </div>
+            <a class="project-link" id="project1"
+               href="https://github.com/" target="_blank"
+               rel="noopener noreferrer">Explore repository ↗</a>
+          </article>
+
+          <article class="card">
+            <h3>Serverless Backend</h3>
+            <p>
+              Event-driven backend using AWS Lambda,
+              API Gateway and message queues.
+            </p>
+            <div class="tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Lambda</span>
+              <span class="tag">SQS</span>
+            </div>
+            <a class="project-link" id="project2"
+               href="https://github.com/" target="_blank"
+               rel="noopener noreferrer">Explore repository ↗</a>
+          </article>
+
+          <article class="card">
+            <h3>DevOps Automation</h3>
+            <p>
+              Automated CI/CD pipelines for testing,
+              building and deploying backend services.
+            </p>
+            <div class="tags">
+              <span class="tag">Docker</span>
+              <span class="tag">CI/CD</span>
+            </div>
+            <a class="project-link" id="project3"
+               href="https://github.com/" target="_blank"
+               rel="noopener noreferrer">Explore repository ↗</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="eyebrow">04 / CONTACT</div>
+        <h2 class="section-title">
+          Let's build something useful.
+        </h2>
+        <p class="about">
+          Interested in backend engineering, architecture,
+          collaboration or mentorship? Let's connect.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" id="githubContact"
+             href="https://github.com/" target="_blank"
+             rel="noopener noreferrer">GitHub ↗</a>
+          <a class="btn" id="linkedinContact"
+             href="https://www.linkedin.com/"
+             target="_blank"
+             rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Vitalii</span>
+        <span>Built with HTML, CSS & coffee.</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const profile = {
+      github: "YOUR_GITHUB_USERNAME",
+      linkedin: "YOUR_LINKEDIN_USERNAME",
+      projects: [
+        "YOUR_REPOSITORY_1",
+        "YOUR_REPOSITORY_2",
+        "YOUR_REPOSITORY_3"
+      ]
+    };
+
+    const githubUrl = `https://github.com/${profile.github}`;
+
+    ["githubHero", "githubContact"].forEach(id => {
+      document.getElementById(id).href = githubUrl;
+    });
+
+    document.getElementById("linkedinContact").href =
+      `https://www.linkedin.com/in/${profile.linkedin}/`;
+
+    profile.projects.forEach((repo, index) => {
+      document.getElementById(`project${index + 1}`).href =
+        `${githubUrl}/${repo}`;
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
